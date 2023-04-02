@@ -20,6 +20,12 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v3
 
+    - name: Apt Update
+      run: apt update
+
+    - name: Install libxml2 development package and build tools
+      run: apt install -y build-essential libxml2-dev
+
     - name: Raku version
       run: raku -v
 
