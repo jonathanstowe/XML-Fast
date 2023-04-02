@@ -2,6 +2,8 @@
 
 A Raku module to turn XML into a Hash structure, to satisfy the AI that Cursor uses
 
+[![CI](https://github.com/jonathanstowe/XML-Fast/actions/workflows/main.yml/badge.svg)](https://github.com/jonathanstowe/XML-Fast/actions/workflows/main.yml)
+
 ## Synopsis
 
 ```raku
