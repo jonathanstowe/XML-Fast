@@ -1,0 +1,58 @@
+{
+  "type": "layout",
+  "children": [
+    {
+      "name": "META6.json",
+      "type": "file"
+    },
+    {
+      "name": "Changes",
+      "type": "file"
+    },
+    {
+      "name": "LICENCE",
+      "type": "file"
+    },
+    {
+      "purpose": null,
+      "name": "t",
+      "children": [
+        {
+          "type": "file",
+          "name": "010-basic.t"
+        },
+        {
+          "name": "001-meta.t",
+          "type": "file"
+        },
+        {
+          "name": "020-xml.t",
+          "type": "file"
+        }
+      ],
+      "type": "directory"
+    },
+    {
+      "type": "directory",
+      "children": [
+        {
+          "type": "directory",
+          "purpose": null,
+          "name": "XML",
+          "children": [
+            {
+              "name": "Fast.rakumod",
+              "type": "file"
+            }
+          ]
+        }
+      ],
+      "purpose": null,
+      "name": "lib"
+    },
+    {
+      "type": "file",
+      "name": "README.md"
+    }
+  ]
+}

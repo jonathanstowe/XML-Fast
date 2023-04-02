@@ -1,0 +1,27 @@
+{
+  "name": "XML::Fast",
+  "auth": "zef:jonathanstowe",
+  "version": "0.0.1",
+  "description": "A Raku module to turn XML into a Hash structure",
+  "license": "Artistic-2.0",
+  "authors": [
+    "Jonathan Stowe <jns+gh@gellyfish.co.uk>"
+  ],
+  "source-url": "git://github.com/jonathanstowe/XML-Fast.git",
+  "tags": [
+     "XML", "Hash", "deserialise"
+  ],
+  "depends": [
+     "LibXML"
+  ],
+  "support": {
+    "source": "http://github.com/jonathanstowe/XML-Fast",
+    "bugtracker": "https://github.com/jonathanstowe/XML-Fast/issues",
+    "email": "jns+gh@gellyfish.co.uk"
+  },
+  "meta-version": "0",
+  "provides": {
+     "XML::Fast": "lib/XML/Fast.rakumod"
+  },
+  "raku": "6.d"
+}
