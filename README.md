@@ -31,17 +31,17 @@ say $json;
 
 This provides a simple and probably very dumb means to turn XML text into a Raku Hash.
 
-I wrote this because I was playing around with (Cursor)[https://www.cursor.so/] - a new IDE that uses some AI engine to generate and edit code.  I thought I'd start out with something relatively simple which people probably do all the time in various languages:
+I wrote this because I was playing around with [Cursor](https://www.cursor.so/) - a new IDE that uses some AI engine to generate and edit code.  I thought I'd start out with something relatively simple which people probably do all the time in various languages:
 
 > Create a Raku program to transform XML to JSON
 
 Easy right?  It gave me the exact code in the Synopsis.
 
-It looks plausible: it got the Raku heredoc syntax right and knows about JSON::Fast.  One problem though: the module `XML::Fast` *doesn't exist*.  I'm guessing it extrapolated from `JSON::Fast` (possibly with a node to the [Perl module of the same name](https://metacpan.org/pod/XML::Fast)), made up a plausible kebab-cased function name and just suggested code that used this made up module.  When I told it that the module `XML::Fast` didn't exist it told me to install it with `zef`.
+It looks plausible: it got the Raku heredoc syntax right and knows about JSON::Fast.  One problem though: the module `XML::Fast` *doesn't exist*.  I'm guessing it extrapolated from `JSON::Fast` (possibly with a nod to the [Perl module of the same name](https://metacpan.org/pod/XML::Fast)), made up a plausible kebab-cased function name and just suggested code that used this made up module.  When I told it that the module `XML::Fast` didn't exist it told me to install it with `zef`!
 
 I eventually got the AI to implement something using [LibXML](https://libxml-raku.github.io/LibXML-raku/), but it couldn't get  it completely right after a lot of prompting: it probably needs to spend more time with the Raku docs.
 
-Anyway, being a relatively easy thing to do, I decided that I would implement the `XML::Fast` that the AI had imagined so if anyone else where to ask it the same thing they wouldn't get disappointed and try another language or spend several frustrating hours trying to work out why the code doesn't work however many suggestions are made.
+Anyway, being a relatively easy thing to do, I decided that I would implement the `XML::Fast` that the AI had hallucinated so if anyone else were to ask it the same thing they wouldn't get disappointed and try another language or spend several frustrating hours trying to work out why the code doesn't work however many suggestions are made.
 
 This is probably not the module you are looking for if you have any more than the simplest requirement: it flattens attributes into the Hash representing an element and doesn't deal with namespaces at all.  It doesn't purport to have the same interface or functionality as the Perl module of the same name.
 
@@ -81,7 +81,7 @@ Because it uses `LibXML` under the hood you may need to install `libxml2` on you
 
 Because this module exists purely to make the AI suggested code in the Synopsis work it's unlikely to gain any additional features, if you want something a bit like this but more flexible then feel free to copy the code and extend it, I might even do that myself.
 
-If you do however find a real bug (like it makes garbage output with some XML data,) please raise an issue on ]Github](https://github.com/jonathanstowe/XML-Fast/issues).  Test cases with the offending XML are appreciated.
+If you do however find a real bug (like it makes garbage output with some XML data,) please [raise an issue on Github](https://github.com/jonathanstowe/XML-Fast/issues).  Test cases with the offending XML are appreciated.
 
 ## Copyright & Licence
 
