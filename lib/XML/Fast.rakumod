@@ -50,7 +50,7 @@ module XML::Fast {
         my $root = $doc.root;
         from-xml($root);
     }
-    multi sub from-xml(LibXML::Element $node where -> $n { $n.firstChild !~~ LibXML::Text || $n.firstChild.isBlank || $n.attributes.elems }) is export {
+    multi sub from-xml(LibXML::Element $node where -> $n { ($n.firstChild !~~ LibXML::Text && $n.firstChild !~~ LibXML::CDATA) || $n.firstChild.isBlank || $n.attributes.elems }) is export {
         my %new_hash;
         my $attrs = $node.attributes;
         for $attrs.kv -> $attr-name, $attr-value {
@@ -68,9 +68,17 @@ module XML::Fast {
         from-xml($node.firstChild);
     }
 
+    multi sub from-xml(LibXML::Element $node where -> $n {$n.firstChild ~~ LibXML::CDATA }) is export {
+        from-xml($node.firstChild);
+    }
+
     multi sub from-xml(LibXML::Text $node ) is export {
         my $value = $node.nodeValue;
         Numeric($value) || $value;
+    }
+
+    multi sub from-xml(LibXML::CDATA $node) is export {
+        $node.nodeValue;
     }
 
 }
